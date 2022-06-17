@@ -2,25 +2,35 @@ from flask import Flask, render_template, request, redirect
 
 from user import User
 app = Flask(__name__)
+
+
+
 @app.route("/")
+def index():
+    return redirect("/users")
+
+
+
 @app.route("/users")
-def home():
-    
+def users():
     users = User.get_all()
     print(users)
-    return render_template("read_page.html", users=users)
+    return render_template("users.html", users=users)
+
+
+
 
 
 from user import User
 @app.route('/user/new')
 def get_all_user():
-    return render_template("create_page.html")
+    return render_template("new_users.html")
 
 
 
 
 
-@app.route('/user/new', methods=['POST'])
+@app.route('/user/create', methods=['POST'])
 def create_user():
     data = {
         "first_name": request.form['first_name'],

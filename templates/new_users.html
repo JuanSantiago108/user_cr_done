@@ -8,16 +8,23 @@
     <title>Form</title>
 </head>
 <body>
-        <a  href="/users">Home</a>      
-    <form action="/user/new" class="w-25 mx-auto" method="POST">
+        <a  href="/users">Home</a>
+        
+    <form action="/user/create" class="w-25 mx-auto" method="POST">
+
         <h3>Add a New User</h3>
+
         <label for="first_name">First name:</label>
         <input type="text" id="first_name" name="first_name">
+
         <label for="last_name">Last name:</label>
         <input type="text" id="last_name" name="last_name" >
+
         <label for="email">Email:</label>
         <input type="text" id="email" name="email">
+
         <button type = submit class = btn btn-success>Create</button>
+
     </form>
 </body>
 </html>
